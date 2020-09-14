@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: service-acl
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: c0fb854e-a13a-4aef-ba99-652ab9066ca6
+      config:
+        server-addr: localhost:8848
+        namespace: c0fb854e-a13a-4aef-ba99-652ab9066ca6
+
+
+

@@ -1,0 +1,28 @@
+server:
+  port: 8222
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-edu
+          uri: lb://service-edu
+          predicates:
+            - Path=/eduservice/**
+        - id: service-ucenter
+          uri: lb://service-ucenter
+          predicates:
+            - Path=/educenter/**
+        - id: after-route
+          uri: https://wwww.baidu.com
+          predicates:
+            - Before=2020-09-10T06:06:06+08:00[Asia/Shanghai]
+
+
