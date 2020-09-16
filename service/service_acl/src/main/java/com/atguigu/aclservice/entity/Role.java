@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 用户表
+ * 
  * </p>
  *
  * @author cxing
@@ -21,30 +21,24 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("acl_user")
-@ApiModel(value="User对象", description="用户表")
-public class User implements Serializable {
+@TableName("acl_role")
+@ApiModel(value="Role对象", description="")
+public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "会员id")
+    @ApiModelProperty(value = "角色id")
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "微信openid")
-    private String username;
+    @ApiModelProperty(value = "角色名称")
+    private String roleName;
 
-    @ApiModelProperty(value = "密码")
-    private String password;
+    @ApiModelProperty(value = "角色编码")
+    private String roleCode;
 
-    @ApiModelProperty(value = "昵称")
-    private String nickName;
-
-    @ApiModelProperty(value = "用户头像")
-    private String salt;
-
-    @ApiModelProperty(value = "用户签名")
-    private String token;
+    @ApiModelProperty(value = "备注")
+    private String remark;
 
     @ApiModelProperty(value = "逻辑删除 1（true）已删除， 0（false）未删除")
     @TableLogic
