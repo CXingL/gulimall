@@ -27,7 +27,7 @@ public class CodeGenerator {
         gc.setOpen(false); //生成后是否打开资源管理器
         gc.setFileOverride(false); //重新生成时文件是否覆盖
         gc.setServiceName("%sService");	//去掉Service接口的首字母I
-        gc.setIdType(IdType.ID_WORKER); //主键策略
+        gc.setIdType(IdType.ID_WORKER_STR); //主键策略
         gc.setDateType(DateType.ONLY_DATE);//定义生成的实体类中日期类型
         gc.setSwagger2(true);//开启Swagger2模式
 
@@ -54,7 +54,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("acl_permission", "acl_permission", "acl_role_permission", "acl_user", "acl_user_role");
+        strategy.setInclude("acl_role");
 
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         strategy.setTablePrefix("acl" + "_"); //生成实体时去掉表前缀

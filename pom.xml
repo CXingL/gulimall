@@ -6,6 +6,8 @@
         <module>service</module>
         <module>common</module>
         <module>common/service_base</module>
+        <module>common/common_utils</module>
+        <module>common/spring_security</module>
         <module>service/service_vod</module>
         <module>service/service_cms</module>
         <module>service/service_ucenter</module>
