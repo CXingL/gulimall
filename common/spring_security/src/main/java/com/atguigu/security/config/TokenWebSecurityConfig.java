@@ -56,7 +56,7 @@ public class TokenWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable()
                 .authorizeRequests()
                 .anyRequest().authenticated()
-                .and().logout().logoutUrl("/admin/acl/index/logout")
+                .and().logout().logoutUrl("/aclservice/user/logout")
                 .addLogoutHandler(new TokenLogoutHandler(tokenManager,redisTemplate)).and()
                 .addFilter(new TokenLoginFilter(authenticationManager(), tokenManager, redisTemplate))
                 .addFilter(new TokenAuthenticationFilter(authenticationManager(), tokenManager, redisTemplate)).httpBasic();
